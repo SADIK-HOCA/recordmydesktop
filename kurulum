@@ -1,20 +1,34 @@
 Gerekli kütüphaneleri kuralım.
-yum install gcc make libXext-devel libSM-devel libICE-devel zlib-devel libXfixes-devel libXdamage-devel libvorbis-devel libtheora-devel
+
+sudo yum -y install gcc make libXext-devel libSM-devel libICE-devel zlib-devel libXfixes-devel libXdamage-devel libvorbis-devel libtheora-devel
 
 Gereksinimler eksiksiz kurulduktan sonra indirme işlemine geçebiliriz
+
 wget http://downloads.sourceforge.net/project/recordmydesktop/recordmydesktop/0.3.8.1/recordmydesktop-0.3.8.1.tar.gz
 tar xf recordmydesktop-0.3.8.1.tar.gz
 rm -rf recordmydesktop-0.3.8.1.tar.gz
-İndirme tamamlandıktan sonra dosyalarımızı çıkarıp kuruluma başlayabiliriz. Arkamızı temizlemekte fayda var :)
+
+İndirme tamamlandıktan sonra dosyalarımızı çıkarıp kuruluma başlayabiliriz. Arkamızı temizlemekte fayda var. :)
 
 cd recordmydesktop-0.3.8.1
 ./configure
 make
-make install
+sudo make install
 
 Kurulumu tamamladıktan sonra uç birim öykünücüsünü (terminal) kullanarak başlatarak kullanıma başlayabiliriz.
+
 recordmydesktop
 
 Not: Bize sunduğu hizmetleri incelemek için el kitabını inceleyebilir (man recordmydesktop) ya da yardım alabiliriz (recordmydesktop --help)
 
+Kullanım kolaylığı için, arayüz istersek gtk-recordmydesktop'u kullanabiliriz. kurulum için aşağıdaki komut yeterli olacaktır.
+
+sudo yum -y install gtk-recordmydesktop
+
 Kaynak: https://www.fusionswift.com/2012/04/installing-recordmydesktop-on-centos-and-rhel/
+
+recordmydesktop silmek için şu komutu kullanabilirsiniz.
+
+sudo yum remove recordmydesktop
+
+Arayüz kurulumu yapmışsak, bğımlılıktan dolayı gtk-recordmydesktop, bizi yormadan kendiliğinden silinecektir.
